@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarListComponent } from './car-list/car-list.component';
 import { CarService } from "./shared/car/car.service";
 import { GiphyService } from "./shared/giphy/giphy.service";
+import { CarEditComponent } from './car-edit/car-edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarListComponent
+    CarListComponent,
+    CarEditComponent
   ],
   imports: [
     BrowserModule,
