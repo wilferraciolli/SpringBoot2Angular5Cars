@@ -10,7 +10,25 @@ import { CarListComponent } from './car-list/car-list.component';
 import { CarService } from "./shared/car/car.service";
 import { GiphyService } from "./shared/giphy/giphy.service";
 import { CarEditComponent } from './car-edit/car-edit.component';
+import { FormsModule } from "@angular/forms";
+import { RouterModule, Routes} from "@angular/router";
 
+//router constant
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/car-list', pathMatch: 'full' },
+  {
+    path: 'car-list',
+    component: CarListComponent
+  },
+  {
+    path: 'car-add',
+    component: CarEditComponent
+  },
+  {
+    path: 'car-edit/:id',
+    component: CarEditComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -26,7 +44,9 @@ import { CarEditComponent } from './car-edit/car-edit.component';
     MatCardModule,
     MatInputModule,
     MatListModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [CarService, GiphyService],
   bootstrap: [AppComponent]
