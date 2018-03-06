@@ -20,7 +20,11 @@ import { HomeComponent } from './home/home.component';
 
 //router constant
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/car-list', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'car-list',
     component: CarListComponent

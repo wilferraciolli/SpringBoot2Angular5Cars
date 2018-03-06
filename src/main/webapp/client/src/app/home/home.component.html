@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-content>
+    <!-- add log in if not authenticated -->
+    <button mat-raised-button color="accent" *ngIf="!oktaAuth.isAuthenticated()"
+            (click)="oktaAuth.loginRedirect()">Login
+    </button>
+    <!-- redirect to cats list if authenticated -->
+    <button mat-raised-button color="accent" *ngIf="oktaAuth.isAuthenticated()"
+           [routerLink]="['/car-list']">Car List
+    </button>
+  </mat-card-content>
+</mat-card>
